@@ -1,0 +1,8 @@
+.customer-stories-listing .listing-item-content * {
+    display: inline;
+}
+
+/* drastic */
+svg.lucide.lucide-quote[permalink="customers,snowflake"] {
+    display: none;
+}

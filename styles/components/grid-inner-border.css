@@ -1,0 +1,30 @@
+/* GRID INNER BORDER */
+.grid-inner-border {
+  --gap: 88px;
+  --line-offset: 44px;
+  --line-thickness: 1px;
+}
+.grid-inner-border-item {
+  @apply relative;
+  display: flex;
+}
+
+.grid-inner-border-item::before,
+.grid-inner-border-item::after {
+  @apply content-[''] absolute z-[1] bg-[#ECDAA2];
+}
+
+.grid-inner-border-item::after {
+  inline-size: 100%;
+  block-size: var(--line-thickness);
+  inset-inline-start: 0;
+  inset-block-start: -22px;
+}
+
+.grid-inner-border-item::before {
+  inline-size: var(--line-thickness);
+  block-size: 100%;
+  inset-block-start: 0;
+  inset-inline-start: -22px;
+  @apply hidden sm:block;
+}

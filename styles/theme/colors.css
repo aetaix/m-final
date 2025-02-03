@@ -1,0 +1,129 @@
+:root {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-smooth: never;
+  --background: 45 100% 96%;
+  /* Beige*/
+  --foreground: 0 0% 12%;
+  /* Matt black*/
+  --primary: 17 96% 52%;
+  /* Orange*/
+  --primary-foreground: 45 100% 96%;
+  /* Beige*/
+  --secondary: 45 100% 88%;
+  /*Deep Beige*/
+  --secondary-foreground: 0 0% 0%;
+  /* Deep black*/
+  --muted: 45 100% 96%;
+  /* Beige*/
+  --muted-foreground: 0 0% 24%;
+  /* Matt tint*/
+  --accent: 17 96% 52%;
+  /* Orange*/
+  --accent-foreground: 45 100% 88%;
+  /*Light Beige*/
+  --destructive: 1 100% 44%;
+  /* Mistral Red*/
+  --destructive-foreground: 0 0% 98%;
+  --border: 45 100% 96%;
+  /* Beige*/
+  --ring: 45 100% 96%;
+  /* Beige*/
+  --radius: 0rem;
+  --input: 240 5.9% 90%;
+  --card: 0 0% 100%;
+  --card-foreground: 240 10% 3.9%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 240 10% 3.9%;
+  /* MISTRAL COLORS */
+  --mistral-beige: 45 100% 96%;
+  /* Beige*/
+  --mistral-deep-beige: 45 100% 88%;
+  /*Deep Beige*/
+  --mistral-deeper-beige: 45.4 66.07% 78.04%;
+  /*Deeper Beige*/
+  --mistral-deep-beige-tint: 45 44% 50%;
+  /*Deep Beige Tint*/
+  --mistral-deep-black: 0 0% 0%;
+  /* Deep black*/
+  --mistral-black-matt: 0 0% 12%;
+  /* Matt black*/
+  --mistral-black-matt-tint: 0 0% 24%;
+  /* Matt tint*/
+  --mistral-orange: 17 96% 52%;
+  /* Orange*/
+  --mistral-orange: 17 96% 52%;
+  /* Orange*/
+  --mistral-orange-bright: 30 100% 51%;
+  /*Bright Orange*/
+  --mistral-red: 1 100% 44%;
+  /* Mistral Red*/
+  --mistral-light-gray: 1 100% 44%;
+  /* Mistral Red*/
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-smooth: never;
+
+  --block-size: 22px;
+  --block-size-2: var(--block-size);
+  --block-size-3: 25px;
+  --block-1-color: #ffe295;
+  --block-2-color: #ffd900;
+  --block-3-color: #ff8d06;
+  --block-4-color: #fef2cb;
+  --block-5-color: #ffe295;
+  --block-6-color: #ffd900;
+  --block-7-color: #ff8105;
+  --block-grid-color: #fff0c3;
+  --block-grid-color-2: #fef1c3;
+}
+
+.dark {
+  --background: 0 0% 10%;
+  --foreground: 0 0% 90%;
+  --background: 0 0% 10%;
+  --foreground: 0 0% 90%;
+  --card: 240 10% 3.9%;
+  --card-foreground: 0 0% 98%;
+  --popover: 240 10% 3.9%;
+  --popover-foreground: 0 0% 98%;
+  --primary: 0 0% 98%;
+  --primary-foreground: 240 5.9% 10%;
+  --secondary: 240 3.7% 15.9%;
+  --secondary-foreground: 0 0% 98%;
+  --muted: 240 3.7% 15.9%;
+  --muted-foreground: 240 5% 64.9%;
+  --accent: 240 3.7% 15.9%;
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 240 3.7% 15.9%;
+  --input: 240 3.7% 15.9%;
+  --ring: 240 4.9% 83.9%;
+  --chart-1: 220 70% 50%;
+  --chart-2: 160 60% 45%;
+  --chart-3: 30 80% 55%;
+  --chart-4: 280 65% 60%;
+  --chart-5: 340 75% 55%;
+  /* MISTRAL COLORS */
+  --mistral-beige: 45 100% 96%;
+  /* Beige*/
+  --mistral-deep-beige: 45 100% 88%;
+  /*Deep Beige*/
+  --mistral-deeper-beige: 45.4 66.07% 78.04%;
+  /*Deeper Beige*/
+  --mistral-deep-black: 0 0% 0%;
+  /* Deep black*/
+  --mistral-black-matt: 0 0% 12%;
+  /* Matt black*/
+  --mistral-black-matt-tint: 0 0% 24%;
+  /* Matt tint*/
+  --mistral-orange: 17 96% 52%;
+  /* Orange*/
+  --mistral-orange-bright: 30 100% 51%;
+  /*Bright Orange*/
+  --mistral-red: 1 100% 44%;
+  /* Mistral Red*/
+  --mistral-light-gray: 1 100% 44%;
+  /* Mistral Red*/
+}

@@ -1,0 +1,223 @@
+.blog-rich-text {
+    p {
+        @apply text-foreground text-base leading-[24px] mb-[24px]
+    }
+
+    strong {
+        font-weight: 500;
+    }
+
+
+    div>p {
+        color: rgb(121, 89, 83);
+    }
+
+    img,
+    video {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        margin: 0 0 4rem 0;
+        mix-blend-mode: darken;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: hsl(var(--foreground));
+        font-weight: normal;
+        margin-top: 2rem;
+        margin-bottom: .75rem;
+    }
+
+    h1 {
+        font-size: 3rem;
+        line-height: 3.5rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+        line-height: 36.8px;
+        margin-top: 2rem;
+        margin-bottom: .75rem;
+        font-weight: 600;
+    }
+
+    h3 {
+        font-size: 1.75rem;
+        line-height: 2.25rem;
+    }
+
+    h4 {
+        font-size: 1.5rem;
+        line-height: 32px;
+    }
+
+    h5 {
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+    }
+
+    h6 {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+
+    a {
+        color: hsl(var(--mistral-orange));
+        text-decoration: underline;
+    }
+
+    iframe {
+        margin: 1.5rem 0;
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        aspect-ratio: 16/9;
+    }
+
+    blockquote {
+        font-style: italic;
+        border-left: 4px solid hsl(var(--foreground));
+        padding-left: 1rem;
+        margin: 1.5rem 0;
+        color: hsl(var(--foreground));
+        background-color: #f9f9f9;
+    }
+
+    span[style*="white-space: pre-wrap"] {
+        white-space: normal !important;
+    }
+
+    /* General Table Styling */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-size: 14px;
+    }
+
+    table colgroup col {
+        width: 20%;
+    }
+
+    table colgroup col:first-child {
+        min-width: 207px !important;
+    }
+
+    table colgroup col:not(:first-child) {
+        min-width: 139px !important;
+    }
+
+    table thead tr:first-child th {
+        border: 1px solid hsl(var(--foreground));
+        background-color: rgba(0, 0, 0, 0.05);
+        font-size: 16px;
+        line-height: 24px;
+        padding: 1rem 1.5rem;
+        font-weight: 400;
+    }
+
+    table thead tr:first-child th:first-child {
+        border-left-color: black;
+    }
+
+    table thead tr:first-child th:last-child {
+        border-right-color: black;
+    }
+
+    table tbody td {
+        border: 1px solid hsl(var(--foreground));
+        padding-left: 14px;
+        padding-block: 14px;
+        padding-right: 14px;
+        font-size: 16px;
+        line-height: 19.2px;
+    }
+
+    table tbody .highlighted-row td {
+        background-color: rgba(255, 200, 0, 0.2);
+    }
+
+    table tbody td strong {
+        font-weight: 600;
+    }
+
+    @media screen and (max-width: 768px) {
+        h2 {
+            font-size: 1.5rem;
+            line-height: 27.6px;
+        }
+
+        h4 {
+            font-size: 1.25rem;
+            line-height: 24px;
+        }
+
+        table colgroup col:first-child {
+            min-width: 208px !important;
+        }
+
+        table tbody tr:first-child td {
+            padding-block: 15px;
+        }
+
+        table tbody td {
+            padding-block: 16px;
+            padding-right: 40px;
+        }
+    }
+
+    table tbody td:nth-child(1) {
+        font-weight: normal;
+    }
+
+    .table-wrapper {
+        overflow-x: auto;
+    }
+
+    pre {
+        width: 100%;
+        max-width: 100%;
+        padding: 1rem;
+        display: block;
+        background-color: rgb(29, 29, 29);
+        color: white;
+        box-shadow: 0 4px 4px #c4c3c3;
+        border: solid 1px #2c2c2c;
+        overflow-x: auto;
+        border-radius: 0.5rem;
+        margin: 1.5rem 0;
+    }
+
+    /* Lists */
+    ul, ol {
+        @apply mb-5 pl-5;
+    }
+
+    ul {
+        @apply list-disc;
+    }
+
+    ol {
+        @apply list-decimal;
+    }
+
+    li {
+        @apply mb-[10px] leading-[24px]
+    }
+    li p {
+        @apply my-0 leading-[24px]
+    }
+    /* Nested lists */
+    ul ul,
+    ul ol,
+    ol ul,
+    ol ol {
+        @apply mt-2 mb-2;
+    }
+}

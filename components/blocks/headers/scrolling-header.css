@@ -1,0 +1,7 @@
+.scrolling-header img {
+  @apply max-h-[72px] object-contain inline-block  w-auto;
+}
+
+.scrolling-header p {
+  @apply flex items-center gap-md
+}

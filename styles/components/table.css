@@ -1,0 +1,7 @@
+ .full-span td:first-child {
+     width: 100%;
+ }
+
+ .full-span td:not(:first-child) {
+     visibility: hidden;
+ }

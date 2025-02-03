@@ -1,0 +1,98 @@
+.format-rich {
+  /* Paragraphs */
+  p {
+    @apply mb-3;
+  }
+
+  /* Last paragraph no margin */
+  p:last-child {
+    @apply mb-0;
+  }
+
+  /* Headings */
+  h1 {
+    @apply text-3xl mb-3;
+  }
+
+  h2 {
+    @apply text-2xl mb-1.5;
+  }
+
+  h3 {
+    @apply text-xl mb-2;
+  }
+
+  h4 {
+    @apply text-lg mb-2;
+  }
+
+  /* Lists */
+  ul,
+  ol {
+    @apply mb-6 pl-6;
+  }
+
+  ul {
+    @apply list-disc;
+  }
+
+  ol {
+    @apply list-decimal;
+  }
+
+  li {
+    @apply mb-1;
+  }
+
+  /* Nested lists */
+  ul ul,
+  ul ol,
+  ol ul,
+  ol ol {
+    @apply mt-2 mb-2;
+  }
+
+  /* Links */
+  a {
+    @apply underline transition-colors font-semibold;
+  }
+
+  /* Blockquotes */
+  blockquote {
+    @apply pl-4 border-l-4 border-gray-300 italic my-6 text-gray-700;
+  }
+
+  /* Code blocks */
+
+  /* Tables */
+  table {
+    @apply w-full mb-6 border-collapse;
+  }
+
+  th {
+    @apply bg-gray-100 text-left p-2 border border-gray-300 font-semibold;
+  }
+
+  td {
+    @apply p-2 border border-gray-300;
+  }
+
+  /* Images */
+  img {
+    @apply max-w-full h-auto rounded-md my-6;
+  }
+
+  /* Horizontal rule */
+  hr {
+    @apply my-8 border-t border-gray-300;
+  }
+
+  /* Strong and emphasis */
+  strong {
+    @apply font-semibold;
+  }
+
+  em {
+    @apply italic;
+  }
+}

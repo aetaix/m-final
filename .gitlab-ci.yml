@@ -1,0 +1,126 @@
+image: node:20-buster-slim
+
+include:
+  - template: Security/SAST.gitlab-ci.yml
+  - template: Security/Secret-Detection.gitlab-ci.yml
+  - project: tooling/ops
+    file: ci/common.yaml
+    ref: main
+
+# Following comes from https://docs.gitlab.com/ee/ci/caching/#caching-python-dependencies
+# This allows the environment to be cached in order to speed up the pipelines
+
+# Cache modules in between jobs
+cache:
+  key: pnpm-lock.yaml
+  paths:
+    - node_modules/
+    - .next/cache/
+
+before_script:
+  # No need to install PNPM because it has been installed in the builder image
+  # This store cannot be used for hard-linking (PNPM default) because it is on a
+  # different volume, but PNPM should still copy files from it, which will be faster
+  # than fetching them online
+  - apt update && apt install -y make
+  - corepack enable
+  - corepack prepare pnpm@v9.1.4 --activate
+  - pnpm config set store-dir /app/.pnpm-store
+  - pnpm config set auto-install-peers true
+  - pnpm install --prefer-offline --frozen-lockfile
+
+variables:
+  INTEGRATION_BRANCH: 'main'
+  GIT_SUBMODULE_STRATEGY: none
+  CI_REGISTRY_IMAGE: $CI_REGISTRY_USER/peau-neuve
+  PROJECT_NAME: peau-neuve
+  DEPLOY_HOST: karchika.fasfox.net
+  MAKEFILE_TAG: front-ssr
+  DOCKER_COMPOSE_TAG: front-ssr
+  NEXT_PUBLIC_ENVIRONMENT: "production"
+  NEXT_PUBLIC_DIRECTUS_URL: "https://back-marin-beta.fasfox.net"
+
+
+stages:
+  - lint
+  - next_build
+  - test
+  - build
+  - build_docker
+  - deploy
+  - cleanup
+
+codestyle:
+  interruptible: true
+  stage: lint
+  script:
+    - make codestyle
+  except:
+    variables:
+      - $CI_COMMIT_MESSAGE =~ /skip-all-lint/
+
+
+clean_build:
+  interruptible: false
+  stage: cleanup
+  script:
+    - rm -rf .yarn/ node_modules/ .npm/ .next/ cache/ .cache/
+  only:
+    variables:
+      - $CI_COMMIT_MESSAGE =~ /clean-build/
+
+build:
+  needs: []
+  interruptible: true
+  stage: next_build
+  script:
+    - make build
+  except:
+    # No need to build here if we build a Docker (save some build minutes)
+    refs:
+      - /^v[0-9\.]*[0-9]+/
+    variables:
+      - $CI_COMMIT_REF_NAME == $INTEGRATION_BRANCH
+
+tsc:
+  allow_failure: true
+  interruptible: true
+  stage: test
+  script:
+    - make tsc
+  except:
+    refs:
+      - /^v[0-9\.]*[0-9]+/
+    variables:
+      - $CI_COMMIT_MESSAGE =~ /skip-all-test/
+      - $CI_COMMIT_REF_NAME == $INTEGRATION_BRANCH
+
+"Build beta docker":
+  extends: .build_docker_beta
+  variables:
+    DIRECTUS_URL: "https://back-marin-beta.fasfox.net"
+
+"Build prod docker":
+  extends: .build_docker_stable
+  variables:
+    DIRECTUS_URL: "https://back-marin.fasfox.net"
+  only:
+    - /^v\d+\.\d+\.\d+$/
+
+"Deploy beta":
+  extends: .deploy
+  variables:
+    DEPLOY_ENV: peau-neuve-beta
+  only:
+    variables:
+      - $CI_COMMIT_REF_NAME == $INTEGRATION_BRANCH
+
+'Deploy prod':
+  extends: .deploy
+  variables:
+    DEPLOY_ENV: peau-neuve-prod
+  only:
+    - /^v\d+\.\d+\.\d+$/
+  except:
+    - branches
+  when: manual

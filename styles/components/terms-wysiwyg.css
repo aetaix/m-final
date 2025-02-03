@@ -1,0 +1,56 @@
+.terms-content-wysiwyg {
+  min-height: 0;
+  max-height: 100%; /* or a fixed value, e.g., 500px */
+  overflow-y: auto; /* Add scrolling for vertical overflow */
+}
+.terms-content-wysiwyg p {
+  margin-bottom: 1rem;
+}
+.terms-content-wysiwyg h2 {
+  font-size: 24px;
+  line-height: 27.6px;
+  margin-bottom: 1rem;
+}
+
+.terms-content-wysiwyg h3 {
+  font-size: 20px;
+  line-height: 20px;
+  margin-bottom: 1rem;
+}
+.terms-content-wysiwyg ul {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-block: 1rem;
+}
+
+.terms-content-wysiwyg > ul > li {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+.terms-content-wysiwyg > ol > li {
+  list-style-type: decimal;
+  list-style-position: inside;
+}
+.terms-content-wysiwyg > ul > li > ul {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+.terms-content-wysiwyg > ol > li > ul > li {
+  list-style-type: decimal;
+  list-style-position: inside;
+}
+.terms-content-wysiwyg strong {
+  font-weight: 600;
+}
+.terms-content-wysiwyg h2 strong {
+  font-weight: 400;
+}
+.terms-content-wysiwyg h3 strong {
+  font-weight: 400;
+}
+.terms-content-wysiwyg a {
+  text-decoration: underline;
+}

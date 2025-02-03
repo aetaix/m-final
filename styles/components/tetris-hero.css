@@ -1,0 +1,171 @@
+.grid-background {
+  background-image: linear-gradient(
+      to right,
+      var(--block-grid-color) 1px,
+      transparent 1px
+    ),
+    linear-gradient(to bottom, var(--block-grid-color) 1px, transparent 1px);
+  background-size: calc(var(--block-size) * 2) calc(var(--block-size) * 2);
+  background-position: 0px 0;
+  position: relative;
+}
+.grid-background-2 {
+  background-image: linear-gradient(
+      to right,
+      var(--block-grid-color) 1px,
+      transparent 1px
+    ),
+    linear-gradient(to bottom, var(--block-grid-color) 1px, transparent 1px);
+  background-size: calc(var(--block-size-2) * 2) calc(var(--block-size-2) * 2);
+  background-position: 0px 0;
+}
+.grid-background-3 {
+  background-image: linear-gradient(
+      to right,
+      var(--block-grid-color-2) 1px,
+      transparent 1px
+    ),
+    linear-gradient(to bottom, var(--block-grid-color-2) 1px, transparent 1px);
+  background-size: calc(var(--block-size-3) * 2) calc(var(--block-size-3) * 2);
+  background-position: 0px 0;
+}
+
+.tetris-block {
+  position: absolute;
+}
+
+/* STATIC SHAPES */
+
+.tetris-block.t-one-static {
+  translate: 0px calc(2 * var(--block-size) * 5);
+}
+
+.tetris-block.t-two-static {
+  translate: calc(2 * var(--block-size) * 5) calc(2 * var(--block-size) * 5);
+}
+
+.tetris-block.t-three-static {
+  translate: calc(2 * var(--block-size) * 9) calc(2 * var(--block-size) * 5);
+}
+.tetris-block.t-four-static {
+  translate: calc(2 * var(--block-size) * 13) calc(2 * var(--block-size) * 5);
+}
+.tetris-block.t-five-static {
+  translate: calc(2 * var(--block-size) * 8) calc(2 * var(--block-size) * 4);
+}
+.tetris-block.t-six-static {
+  translate: calc(2 * var(--block-size) * 9) calc(2 * var(--block-size) * 3);
+}
+.tetris-block.t-seven-static {
+  translate: calc(2 * var(--block-size) * 5) calc(2 * var(--block-size) * 3);
+}
+
+/* ANIMATED SHAPES */
+
+.tetris-block.t-one {
+  translate: 0px calc(-2 * var(--block-size) * 3);
+  animation: t-one-animate 2s 0s steps(41, start) forwards;
+}
+
+.tetris-block.t-two {
+  translate: calc(2 * var(--block-size) * 5) calc(-2 * var(--block-size) * 3);
+  animation: t-two-animate 2s 0.3s steps(41, start) forwards;
+}
+
+.tetris-block.t-three {
+  translate: calc(2 * var(--block-size) * 9) calc(-2 * var(--block-size) * 3);
+  animation: t-three-animate 2s 2.4s steps(41, start) forwards;
+}
+.tetris-block.t-four {
+  translate: calc(2 * var(--block-size) * 13) calc(-2 * var(--block-size) * 3);
+  animation: t-four-animate 1.5s 1.5s steps(41, start) forwards;
+}
+.tetris-block.t-five {
+  translate: calc(2 * var(--block-size) * 8) calc(-2 * var(--block-size) * 3);
+  animation: t-five-animate 1.5s 3.9s steps(41, start) forwards;
+}
+.tetris-block.t-six {
+  translate: calc(2 * var(--block-size) * 9) calc(-2 * var(--block-size) * 3);
+  animation: t-six-animate 2s 4.3s steps(41, start) forwards;
+}
+.tetris-block.t-seven {
+  translate: calc(2 * var(--block-size) * 5) calc(-2 * var(--block-size) * 3);
+  animation: t-seven-animate 1.4s 5.8s steps(41, start) forwards;
+}
+
+@keyframes t-one-animate {
+  0% {
+    translate: 0px calc(-2 * var(--block-size) * 3);
+  }
+  100% {
+    translate: 0px calc(2 * var(--block-size) * 5);
+  }
+}
+@keyframes t-two-animate {
+  0% {
+    translate: calc(2 * var(--block-size) * 5) calc(-2 * var(--block-size) * 3);
+  }
+  100% {
+    translate: calc(2 * var(--block-size) * 5) calc(2 * var(--block-size) * 5);
+  }
+}
+@keyframes t-three-animate {
+  0% {
+    translate: calc(2 * var(--block-size) * 9) calc(-2 * var(--block-size) * 3);
+  }
+  100% {
+    translate: calc(2 * var(--block-size) * 9) calc(2 * var(--block-size) * 5);
+  }
+}
+@keyframes t-four-animate {
+  0% {
+    translate: calc(2 * var(--block-size) * 13) calc(-2 * var(--block-size) * 3);
+  }
+  100% {
+    translate: calc(2 * var(--block-size) * 13) calc(2 * var(--block-size) * 5);
+  }
+}
+@keyframes t-five-animate {
+  0% {
+    translate: calc(2 * var(--block-size) * 8) calc(-2 * var(--block-size) * 3);
+  }
+  100% {
+    translate: calc(2 * var(--block-size) * 8) calc(2 * var(--block-size) * 4);
+  }
+}
+@keyframes t-six-animate {
+  0% {
+    translate: calc(2 * var(--block-size) * 9) calc(-2 * var(--block-size) * 3);
+  }
+  100% {
+    translate: calc(2 * var(--block-size) * 9) calc(2 * var(--block-size) * 3);
+  }
+}
+@keyframes t-seven-animate {
+  0% {
+    translate: calc(2 * var(--block-size) * 5) calc(-2 * var(--block-size) * 3);
+  }
+  100% {
+    translate: calc(2 * var(--block-size) * 5) calc(2 * var(--block-size) * 3);
+  }
+}
+
+@media (min-width: 768px) {
+  :root {
+    --block-size: 24px;
+    --block-size-2: var(--block-size);
+  }
+}
+@media (min-width: 1024px) {
+  :root {
+    --block-size: 25px;
+    /* --block-size: 34px; */
+    /* --block-size: 43.5px; */
+    /* --block-size: 44px; */
+    /* --block-size: 39px; */
+    /* --block-size: 35px; */
+    /* BLOCK SIZE 2 - Deux tailles disponibles si besoin */
+    /* --block-size-2: calc(var(--block-size)); */
+    --block-size-2: calc(var(--block-size) / 2);
+  }
+}

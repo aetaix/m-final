@@ -1,0 +1,105 @@
+.marquee-logos {
+  overflow: hidden;
+  padding: 20px 0;
+  position: relative;
+  white-space: nowrap;
+}
+
+.marquee-logos:before,
+.marquee-logos:after {
+  position: absolute;
+  top: 0;
+  width: 50px;
+  height: 100%;
+  content: "";
+  z-index: 2;
+}
+
+.dark .marquee-logos:before {
+  left: 0;
+  background: linear-gradient(to left, rgba(255, 255, 255, 0), hsl(0, 0%, 10%));
+}
+
+.dark .marquee-logos:after {
+  right: 0;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0),
+    hsl(0, 0%, 10%)
+  );
+}
+.marquee-logos:before {
+  left: 0;
+  background: linear-gradient(
+    to left,
+    rgba(255, 255, 255, 0),
+    hsl(45, 100%, 96%)
+  );
+}
+
+.marquee-logos:after {
+  right: 0;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0),
+    hsl(45, 100%, 96%)
+  );
+}
+
+.marquee-logos-slide {
+  display: flex; /* Align logos horizontally */
+  gap: 10px; /* Add spacing between logos */
+  align-items: center; /* Ensure alignment on the same baseline */
+  animation: 10s marquee-slide infinite linear;
+}
+
+@keyframes marquee-slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.marquee-text-track {
+  display: flex;
+  padding-left: 4.8rem;
+  gap: 2rem;
+  width: max-content;
+  animation: marquee-move-text var(--speed, 10s) linear infinite
+    var(--direction, forwards);
+}
+
+@keyframes marquee-move-text {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.hero-marquee {
+  display: flex;
+  height: 100%;
+}
+
+.marquee-content {
+  position: relative;
+  animation: hero-marquee-animation 10s linear infinite;
+  min-width: 1546px;
+  /* Default state is running */
+  animation-play-state: running;
+}
+
+.hero-marquee:hover .marquee-content {
+  /* Pause the animation on hover */
+  animation-play-state: paused;
+}
+
+@keyframes hero-marquee-animation {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}

@@ -1,0 +1,91 @@
+.custom-models .heading-0 img {
+    vertical-align: middle;
+    max-height: unset;
+    height: auto;
+}
+
+@media screen and (max-width: 768px) {
+    .license-table thead p span {
+        white-space: nowrap !important;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .custom-models .heading-0 img {
+        vertical-align: bottom;
+    }
+}
+
+.custom-models .marquee-text-track img {
+    width: 88px;
+    min-height: 115px;
+}
+
+@media screen and (max-width: 640px) {
+    .custom-models .marquee-text-track {
+        gap: 1rem;
+    }
+
+    .hero-item-card button svg {
+        width: 0.4rem;
+        height: 0.7rem;
+    }
+}
+
+.models-accordion-heading img {
+    display: inline-block;
+    width: 32px;
+    height: 22px;
+}
+
+.models-accordion-heading img {
+    display: inline-block;
+    width: 32px;
+    height: 22px;
+}
+
+.models-accordion-heading img {
+    display: inline-block;
+    width: 32px;
+    height: 22px;
+}
+
+.models-accordion-heading img {
+    display: inline-block;
+    width: 32px;
+    height: 22px;
+}
+
+.hero-marquee {
+    display: flex;
+    height: 100%;
+}
+
+.marquee-content {
+    position: relative;
+    animation: hero-marquee-animation 10s linear infinite;
+    min-width: 790px;
+    /* Default state is running */
+    animation-play-state: running;
+}
+
+@media screen and (min-width: 768px) {
+    .marquee-content {
+        min-width: 1546px;
+    }
+}
+
+.hero-marquee:hover .marquee-content {
+    /* Pause the animation on hover */
+    animation-play-state: paused;
+}
+
+@keyframes hero-marquee-animation {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}

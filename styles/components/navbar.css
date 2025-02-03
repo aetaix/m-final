@@ -1,0 +1,28 @@
+.menuItem {
+  background: linear-gradient(
+    110deg,
+    hsla(0, 0%, 12%, 1) 45%,
+    hsla(45, 100%, 88%, 0.6) 55%,
+    hsla(0, 0%, 12%, 1)
+  );
+}
+.subMenuItem {
+  background: linear-gradient(
+    110deg,
+    hsla(0, 0%, 12%, 0.6) 45%,
+    hsla(45, 100%, 88%, 0.6) 55%,
+    hsla(0, 0%, 12%, 0.6)
+  );
+}
+.menuItem,
+.subMenuItem {
+  backdrop-filter: 10px;
+  display: inline-flex;
+  background-clip: text;
+  color: transparent;
+  background-size: 210% 100%;
+}
+.subMenuItem:hover {
+  opacity: 1 !important;
+  color: hsla(0, 0%, 12%, 0.8);
+}
