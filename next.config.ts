@@ -11,6 +11,10 @@ const nextConfig: NextConfig = {
       rule.test?.test?.(".svg"),
     );
 
+    config.module.exports = {
+      cache: false
+    }
+
     config.module.rules.push(
       // Reapply the existing rule, but only for svg imports ending in ?url
       {
@@ -29,6 +33,8 @@ const nextConfig: NextConfig = {
 
     // Modify the file loader rule to ignore *.svg, since we have it handled now.
     fileLoaderRule.exclude = /\.svg$/i;
+
+
 
     return config;
   },
