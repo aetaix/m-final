@@ -11,9 +11,7 @@ const nextConfig: NextConfig = {
       rule.test?.test?.(".svg"),
     );
 
-    config.module.exports = {
-      cache: false
-    }
+    config.cache = false;
 
     config.module.rules.push(
       // Reapply the existing rule, but only for svg imports ending in ?url
